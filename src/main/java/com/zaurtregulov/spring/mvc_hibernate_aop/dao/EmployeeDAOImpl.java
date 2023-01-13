@@ -17,7 +17,6 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     private SessionFactory sessionFactory;
 
     @Override
-    @Transactional // анотація вказує, що Spring бере на себе відк/закр транзакції
     public List<Employee> getAllEmployees() {
 
         Session session = sessionFactory.getCurrentSession();
