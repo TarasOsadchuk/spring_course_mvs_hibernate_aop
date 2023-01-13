@@ -1,6 +1,5 @@
 package com.zaurtregulov.spring.mvc_hibernate_aop.controller;
 
-import com.zaurtregulov.spring.mvc_hibernate_aop.dao.EmployeeDAO;
 import com.zaurtregulov.spring.mvc_hibernate_aop.entity.Employee;
 import com.zaurtregulov.spring.mvc_hibernate_aop.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,5 +50,13 @@ public class MyController {
         model.addAttribute("employee", employee);
 
         return "employee-info";
+    }
+
+    @RequestMapping("/deleteEmployee")
+    public String deleteEmployee(@RequestParam("empId") int id) {
+
+        employeeService.deleteEmployee(id);
+
+        return "redirect:/";
     }
 }
