@@ -29,4 +29,11 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
         return allEmployee;
     }
+
+    @Override
+    public void saveEmployee(Employee employee) {
+
+        Session session = sessionFactory.getCurrentSession();
+        session.save(employee);
+    }
 }
